@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum Tipo_de_Conta {
+    comprador
+    anunciante
+}
+
+model Users {
+    id              String         @id
+    name            String         @unique
+    email           String         @unique
+    cpf             String         @unique
+    celular         String
+    data_nascimento DateTime
+    descricao       String
+    conta           Tipo_de_Conta
+    password        String
+    Address         Address[]
+    Anouncements    Anouncements[]
+    Comments        Comments[]
+
+    @@map("users")
+}
+
+model Address {
+    id          String @id
+    cep         String
+    estado      String
+    cidade      String
+    rua         String
+    numero      Int
+    complemento String
+    user        Users  @relation(fields: [users_Id], references: [id])
+    users_Id    String @unique
+}
+
+model Anouncements {
+    id            String     @id
+    marca         String
+    modelo        String
+    ano           Int
+    combustivel   String
+    quilometragem Decimal
+    cor           String
+    preco_fipe    Float
+    preco         Float
+    descricao     String
+    user          Users      @relation(fields: [user_id], references: [id])
+    user_id       String     @unique
+    Images        Images[]
+    Comments      Comments[]
+}
+
+model Images {
+    id             String       @id
+    imagem_capa    String
+    imagem1        String
+    anouncement    Anouncements @relation(fields: [anouncement_id], references: [id])
+    anouncement_id String
+}
+
+model Comments {
+    id             String       @id
+    comentario     String
+    user           Users        @relation(fields: [user_id], references: [id])
+    user_id        String
+    anouncement    Anouncements @relation(fields: [anouncement_id], references: [id])
+    anouncement_id String
+}
