@@ -1,26 +1,40 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateAnouncementDto } from './dto/create-anouncement.dto';
 import { UpdateAnouncementDto } from './dto/update-anouncement.dto';
+import { AnouncementsRepository } from './repositories/anouncements.repository';
 
 @Injectable()
 export class AnouncementsService {
-  create(createAnouncementDto: CreateAnouncementDto) {
-    return 'This action adds a new anouncement';
+  constructor(private anouncementRepository: AnouncementsRepository){}
+  async create(createAnouncementDto: CreateAnouncementDto, anouncement_id: string) {
+    const anouncement = await this.anouncementRepository.create(createAnouncementDto, anouncement_id);
+    return anouncement;
   }
 
-  findAll() {
-    return `This action returns all anouncements`;
+  async findAll() {
+    const anouncements = await this.anouncementRepository.findAll();
+    return anouncements;
+
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} anouncement`;
+  async findOne(id: string) {
+    const anouncement = await this.anouncementRepository.findOne(id);
+    if (!anouncement) {
+      throw new NotFoundException('User not found !');
+    }
+    return anouncement;
   }
 
-  update(id: number, updateAnouncementDto: UpdateAnouncementDto) {
-    return `This action updates a #${id} anouncement`;
+  async update(data: UpdateAnouncementDto, id: string,) {
+    const anouncement = await this.anouncementRepository.update(data, id);
+    if(!anouncement){
+      throw new NotFoundException("anouncement not found!")
+    }
+    return anouncement
+
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} anouncement`;
+  async remove(id: string) {
+    await this.anouncementRepository.remove(id);
   }
 }

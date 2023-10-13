@@ -1,26 +1,45 @@
-import { Injectable } from '@nestjs/common';
-import { CreateImageDto } from './dto/create-image.dto';
-import { UpdateImageDto } from './dto/update-image.dto';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import {v2 as cloudinary } from "cloudinary"
+import { ImagesRepository } from './repositories/images.repository';
+import { unlink } from 'fs';
+import { error } from 'console';
 
 @Injectable()
 export class ImagesService {
-  create(createImageDto: CreateImageDto) {
-    return 'This action adds a new image';
-  }
+  constructor(private imagesRepository: ImagesRepository){}
+  async upload(imagem_capa: Express.Multer.File, anouncement_id:string) {
+    cloudinary.config({
+      cloud_name: process.env.CLOUD_NAME,
+      api_key: process.env.API_KEY,
+      api_secret: process.env.API_SECRET,
+    })
 
-  findAll() {
-    return `This action returns all images`;
-  }
+    const findAnouncement = await this.imagesRepository.findOne(anouncement_id)
 
-  findOne(id: number) {
-    return `This action returns a #${id} image`;
-  }
+    if(!findAnouncement){
+      throw new NotFoundException("image not found")
+    }
 
-  update(id: number, updateImageDto: UpdateImageDto) {
-    return `This action updates a #${id} image`;
-  }
 
-  remove(id: number) {
-    return `This action removes a #${id} image`;
+    const uploadImage = await cloudinary.uploader.upload(
+        imagem_capa.path,
+      { resource_type: 'image' },
+      (error, result) => result,
+    );
+
+    const createImage = await this.imagesRepository.create(
+      {
+        imagem_capa:uploadImage.secure_url,
+        imagem1:uploadImage.segure_url,
+        imagem2:uploadImage.segure_url
+      },
+      anouncement_id
+    )
+
+    unlink(imagem_capa.path, (error)=>{
+      if(error) console.log(error)
+    });
+    return createImage;
   }
 }
+

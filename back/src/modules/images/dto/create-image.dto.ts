@@ -3,13 +3,13 @@ import { IsNotEmpty, IsString } from 'class-validator';
 export class CreateImageDto {
   @IsString()
   @IsNotEmpty()
-  imagem_capa;
+  imagem_capa:string;
 
   @IsString()
   @IsNotEmpty()
-  imagem1;
+  imagem1: string;
 
   @IsString()
   @IsNotEmpty()
-  imagem2;
+  imagem2?: string;
 }

@@ -8,9 +8,9 @@ export class Anouncement {
   combustivel: string;
   quilometragem: number;
   cor: string;
-  preco_fipe: Float32Array;
-  preco: Float32Array;
-  decricao: Text;
+  preco_fipe: number;
+  preco: number;
+  descricao: string;
   user_id: string;
 
   constructor() {
