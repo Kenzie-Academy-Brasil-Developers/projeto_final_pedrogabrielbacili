@@ -71,3 +71,13 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Documentacao 
+
+. Projeto backend feito com nestjs.
+  1. O servidor BACK-END precisar ser iniciado: npm run start:dev.
+  2. Para visualizar a documentação acesse: http://localhost:3000/api.
+
+.Banco de dados utilizado: postgreSQL.
+ 
+.ORM utilizado: Prisma.
