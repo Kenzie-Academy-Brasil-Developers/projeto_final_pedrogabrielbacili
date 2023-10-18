@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 interface IStyledTitleProps {
     $fontSize: 'one' | 'two' | 'three' | 'four';
     textAlign?: 'center' | 'left' | 'right';
-    fontColor?:'white' | 'gray' | 'gray600';
+    fontColor?:'white' | 'gray' | 'gray600' | 'gray550';
   }
 
 export const StyledTitle = styled.div<IStyledTitleProps>`
@@ -21,11 +21,16 @@ export const StyledTitle = styled.div<IStyledTitleProps>`
             case 'two':
                 return css`
                     font-weight:600;
-                    font-size:18px;
+                    font-size:20px;
                 `
             case 'three':
                 return css`
                     font-size:14px;
+                    font-weight:500;
+                `
+            case 'four':
+                return css`
+                    font-size:12px;
                     font-weight:500;
                 `
         }
@@ -44,6 +49,10 @@ export const StyledTitle = styled.div<IStyledTitleProps>`
             case 'gray600':
                 return css`
                     color:${theme.colors.gray600}
+                `
+            case 'gray550':
+                return css`
+                    color:${theme.colors.gray550}
                 `
         }
       }}
