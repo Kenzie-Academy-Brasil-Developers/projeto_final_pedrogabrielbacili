@@ -74,10 +74,16 @@ Nest is [MIT licensed](LICENSE).
 
 ## Documentacao 
 
-. Projeto backend feito com nestjs.
+.para rodar as migracoes utilize o seguinte comando: npx migration:npx prisma migrate dev
+
+. Projeto backend feito com nestjs
   1. O servidor BACK-END precisar ser iniciado: npm run start:dev.
   2. Para visualizar a documentação acesse: http://localhost:3000/api.
 
 .Banco de dados utilizado: postgreSQL.
  
 .ORM utilizado: Prisma.
+
+.para visualizar o banco de dados: npx prisma studio.
+
+atente-se: tenha a ultima version do node instalado na sua maquina.

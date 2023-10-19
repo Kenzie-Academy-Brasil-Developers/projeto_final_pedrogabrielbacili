@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.5.1",
     "globalstyles": "^2.0.0",
     "package.json": "^2.0.1",
@@ -18,7 +19,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-icons": "^4.11.0",
-    "react-router-dom": "^6.16.0",
+    "react-router-dom": "^6.17.0",
     "styled-components": "^6.1.0",
     "user-context": "^1.0.14",
     "zod": "^3.22.4"

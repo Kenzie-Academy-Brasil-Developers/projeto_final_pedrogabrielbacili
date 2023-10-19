@@ -52,7 +52,7 @@ export class AnouncementsPrismaRepository implements AnouncementsRepository{
         return anouncement;
     }
     async remove(id: string): Promise<void> {
-        await this.prisma.users.delete({
+        await this.prisma.anouncements.delete({
             where: { id },
         });
     }

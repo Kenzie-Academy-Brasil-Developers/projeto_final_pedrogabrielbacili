@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const StyledLabel = styled.div`
-    label{
+export const StyledInputs = styled.div`
+    input{
         width:315px;
         height:48px;
         border-radius:4px;

@@ -51,17 +51,20 @@ export class UserService {
     return user;
   }
   
-  async update(data: UpdateUserDto, idToUpdate: string, userId) {
-    if(idToUpdate !== userId){
-      throw new ForbiddenException("You dont have permisions");
-    }
-    const user = await this.userRepository.update(data, idToUpdate);
+  async update(data: UpdateUserDto, id: string) {
+    const user = await this.userRepository.update(data, id);
     if (!user) {
       throw new NotFoundException('User not exist');
     }
     return user;
   }
+
   async remove(id: string) {
-    await this.userRepository.remove(id);
+    const user = await this.userRepository.findOne(id);
+    if (!user) {
+      throw new NotFoundException('User not exist');
+    }else{
+      await this.userRepository.remove(id);
+    }
   }
 }

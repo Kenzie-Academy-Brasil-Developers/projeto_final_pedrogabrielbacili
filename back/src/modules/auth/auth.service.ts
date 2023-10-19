@@ -23,7 +23,7 @@ export class AuthService {
         const payload = { 
             sub: user.id, 
             email: user.email,
-            conta: user.conta, // Inclua o tipo de conta no payload do token
+            conta: user.conta,
           };
         return {
             token: this.jwtService.sign(payload),

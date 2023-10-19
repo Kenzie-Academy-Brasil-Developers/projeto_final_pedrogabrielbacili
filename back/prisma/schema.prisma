@@ -53,12 +53,12 @@ model Anouncements {
   preco_fipe    Float
   preco         Float
   descricao     String
-  User          Users   @relation(fields: [user_id], references: [id])
+  User          Users   @relation(fields: [user_id], references: [id], onDelete: Cascade)
   user_id       String
 
   Images   Images[]
   Comments Comments[]
-  @@map("anouncements")
+  
 }
 
 model Images {

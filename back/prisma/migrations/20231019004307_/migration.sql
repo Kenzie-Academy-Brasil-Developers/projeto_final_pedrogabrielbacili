@@ -31,7 +31,7 @@ CREATE TABLE "Address" (
 );
 
 -- CreateTable
-CREATE TABLE "anouncements" (
+CREATE TABLE "Anouncements" (
     "id" TEXT NOT NULL,
     "marca" TEXT NOT NULL,
     "modelo" TEXT NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE "anouncements" (
     "descricao" TEXT NOT NULL,
     "user_id" TEXT NOT NULL,
 
-    CONSTRAINT "anouncements_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Anouncements_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -81,13 +81,13 @@ CREATE UNIQUE INDEX "Users_cpf_key" ON "Users"("cpf");
 ALTER TABLE "Address" ADD CONSTRAINT "Address_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "Users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "anouncements" ADD CONSTRAINT "anouncements_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "Users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Anouncements" ADD CONSTRAINT "Anouncements_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "Users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Images" ADD CONSTRAINT "Images_anouncement_id_fkey" FOREIGN KEY ("anouncement_id") REFERENCES "anouncements"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Images" ADD CONSTRAINT "Images_anouncement_id_fkey" FOREIGN KEY ("anouncement_id") REFERENCES "Anouncements"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "Comments" ADD CONSTRAINT "Comments_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "Users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Comments" ADD CONSTRAINT "Comments_anouncement_id_fkey" FOREIGN KEY ("anouncement_id") REFERENCES "anouncements"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Comments" ADD CONSTRAINT "Comments_anouncement_id_fkey" FOREIGN KEY ("anouncement_id") REFERENCES "Anouncements"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

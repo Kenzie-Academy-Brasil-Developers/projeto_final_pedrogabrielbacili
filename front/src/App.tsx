@@ -1,3 +1,4 @@
+import  Router  from "./routes"
 import { Footer } from './components/Footer'
 import { HeaderLage } from './components/Headers/HeaderLage'
 import { ListComentario } from './components/ListComentario'
@@ -8,10 +9,7 @@ function App() {
   return (
     <>
     <GlobalStyle/>
-    <HeaderLage/>
-    <Page/>
-    <ListComentario/>
-    <Footer/>
+    <Router/>
     </>
   )
 }

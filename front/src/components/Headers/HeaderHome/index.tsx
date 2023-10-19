@@ -1,4 +1,3 @@
-
 import { StyledButtonCSS } from "../../../styles/button.ts"
 import { StyledHeader, StyledTextDegrade, StyledButtonRegisterAndLogin  } from "./style.ts"
 

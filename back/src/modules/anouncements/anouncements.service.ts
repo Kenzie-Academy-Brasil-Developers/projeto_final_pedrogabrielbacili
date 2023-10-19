@@ -28,13 +28,18 @@ export class AnouncementsService {
   async update(data: UpdateAnouncementDto, id: string,) {
     const anouncement = await this.anouncementRepository.update(data, id);
     if(!anouncement){
-      throw new NotFoundException("anouncement not found!")
+      throw new NotFoundException("Anouncement not found!")
     }
     return anouncement
 
   }
 
   async remove(id: string) {
-    await this.anouncementRepository.remove(id);
+    const anouncement=await this.anouncementRepository.findOne(id);
+    if(!anouncement){
+      throw new NotFoundException("Anouncement not found")
+    }else{
+      await this.anouncementRepository.remove(id);
+    }
   }
 }
