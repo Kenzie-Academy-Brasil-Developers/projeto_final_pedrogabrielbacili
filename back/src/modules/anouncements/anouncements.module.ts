@@ -13,6 +13,6 @@ import { AnouncementsPrismaRepository } from './repositories/prisma/anouncements
       useClass: AnouncementsPrismaRepository,
     },
   ],
-  exports:[AnouncementsService]
+  exports:[AnouncementsRepository, AnouncementsService]
 })
 export class AnouncementsModule {}

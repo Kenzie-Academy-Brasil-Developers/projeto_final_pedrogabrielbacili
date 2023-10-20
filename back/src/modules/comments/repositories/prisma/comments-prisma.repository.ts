@@ -8,18 +8,18 @@ import { Injectable } from "@nestjs/common/decorators";
 @Injectable()
 export class CommentsPrismaRepository implements CommentsRepository{
     constructor(private prisma: PrismaService){}
-    async create(data: CreateCommentDto, user_id: string, anouncement_id:string): Promise<Comment> {
+    async create(data: CreateCommentDto, user_id: string): Promise<Comment> {
         const comment = new Comment();
         Object.assign(comment, {
           ...data,
         });
     
-        const newCommets = await this.prisma.comment.create({
+        const newCommets = await this.prisma.comments.create({
           data:{
             id:comment.id,
             comentario:comment.comentario,
             user_id,
-            anouncement_id,
+            anouncement_id:comment.anouncement_id,
           },
         });
         return plainToInstance(Comment, newCommets);

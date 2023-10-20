@@ -14,6 +14,6 @@ import { AddressModule } from '../address/address.module';
     PrismaService,
     { provide: UsersRepository, useClass: UsersPrismaRepository },
   ],
-  exports: [UserService],
+  exports: [UsersRepository, UserService],
 })
 export class UserModule {}
