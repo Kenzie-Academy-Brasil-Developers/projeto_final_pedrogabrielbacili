@@ -23,6 +23,7 @@ async function bootstrap() {
       transformOptions: { groups: ['transform'] },
     }),
   );
+  app.enableCors(({origin:"http://localhost:5173"}))
   await app.listen(3000);
 }
 bootstrap();

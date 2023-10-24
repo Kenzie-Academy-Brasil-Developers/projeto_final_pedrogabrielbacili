@@ -1,11 +1,11 @@
-import { ProductCard } from "../ProductCard"
+import { LoginPage } from "./LoginPage"
 import { StyledPage } from "./style"
 
 export const Page=()=>{
     return (
         <main>
             <StyledPage>
-                <ProductCard/>
+                <LoginPage/>
             </StyledPage>
         </main>
     )

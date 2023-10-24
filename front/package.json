@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@nestjs/platform-express": "^10.2.7",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.5.1",
+    "cors": "^2.8.5",
     "globalstyles": "^2.0.0",
     "package.json": "^2.0.1",
     "react": "^18.2.0",
@@ -25,6 +27,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.15",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.28",

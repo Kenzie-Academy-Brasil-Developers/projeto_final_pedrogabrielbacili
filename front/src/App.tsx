@@ -1,15 +1,14 @@
-import  Router  from "./routes"
-import { Footer } from './components/Footer'
-import { HeaderLage } from './components/Headers/HeaderLage'
-import { ListComentario } from './components/ListComentario'
-import { Page } from './components/Page'
+import { AuthProvider } from "./providers/AuthProvider"
+import  Router  from "./routes/routes"
 import GlobalStyle from './styles/GlobalStyle'
 
 function App() {
   return (
     <>
-    <GlobalStyle/>
-    <Router/>
+      <GlobalStyle/>
+      <AuthProvider>
+        <Router/>
+      </AuthProvider>
     </>
   )
 }

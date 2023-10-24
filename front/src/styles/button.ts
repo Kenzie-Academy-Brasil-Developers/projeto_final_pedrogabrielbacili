@@ -5,7 +5,7 @@ interface IStyledButtonProps {
     $buttonStyle: 'buttonBigGray' | 'buttonMediumNegative' | 'buttonBigDisable' 
     | 'buttonBigBlueOpacity' | 'buttonBigBlue' | 'buttonBig45' |
     'buttonBigLight' | 'buttonBigOutlineLight' | 'buttonBigOutline1' | 'buttonOutline2'| 
-    'buttonBlue1' | 'buttonLink' | 'buttonAlert'| 'buttonSucess'| 'buttonBlueDisable';
+    'buttonBlue1' | 'buttonLink' | 'buttonAlert'| 'buttonSucess'| 'buttonBlueDisable' | 'buttonTipoDeConta';
   }
 
 export const StyledButtonCSS = styled.button<IStyledButtonProps>`
@@ -26,13 +26,15 @@ export const StyledButtonCSS = styled.button<IStyledButtonProps>`
         switch ($buttonSize){
             case 'medium':
                 return css`
+                    height:48px;
+                    width:150px;
                     padding:12px, 20px, 12px, 20px;
                 `;
             case 'big':
                 return css`
                     height:48px;
-                    wigth:133px;
-                    padding:12px, 28px, 12px, 28px;
+                    width:315px;
+                    padding:12px 28px 12px 28px;
                     
                 `;
         }
@@ -112,12 +114,23 @@ export const StyledButtonCSS = styled.button<IStyledButtonProps>`
                         color:${theme.colors.gray10};
                     }
                 `
+            case 'buttonTipoDeConta':
+                return css`
+                    background:${theme.colors.white};
+                    color:${theme.colors.gray900};
+                    border:1.5px solid ${theme.colors.gray500};
+                    &:active{
+                        background:${theme.colors.blue900};
+                        color:${theme.colors.white};
+                        
+                    }
+                `
             case 'buttonBlue1':
                 return css`
                     background:${theme.colors.white};
                     color:${theme.colors.blue900};
                     border-color:${theme.colors.blue900};
-                    border:1.5px
+                    border:1.5px;
                     &:hover{
                         color:${theme.colors.blue900};
                         background:${theme.colors.white};

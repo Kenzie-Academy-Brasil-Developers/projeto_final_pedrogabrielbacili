@@ -19,8 +19,10 @@ export const StyledButtonRegisterAndLogin = styled.div`
     width:300px;
     height:79px;
     .buttonLogin{
-      margin-right: 24px;
-      margin-left: 65px;
+      margin-right: 14px;
+    }
+    @media (max-width:601px){
+      display:none;
     }
 `
 export const StyledTextDegrade = styled.div`
@@ -35,3 +37,13 @@ export const StyledTextDegrade = styled.div`
       font-size:22px;
     }
 `;
+
+export const StyledMenuHambuguer = styled.button`
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin-right:3%;
+    @media (min-width: 600px) {
+        display: none;
+    }
+`

@@ -6,19 +6,21 @@ export const StyledFooter = styled.div`
     background:${({theme})=>theme.colors.gray900};
     height:140px;
     width:100%;
-    
-    .motorsFooter{
-        margin-left:5%;
-    }
-    .copyright{
-        margin-left:28%;
-    }
+    flex-direction: row;
+    justify-content: space-around;
+
     .buttonIcon{
-        margin-left:27%;
         height:50px;
         width:53px;
     }
     .shop{
         font-size:14px
+    }
+    @media(max-width:500px){
+        flex-direction:column;
+        .motorsFooter, .copyright, .buttonIcon{
+            margin-left:0;
+            margin-top:8px;
+        }
     }
 `

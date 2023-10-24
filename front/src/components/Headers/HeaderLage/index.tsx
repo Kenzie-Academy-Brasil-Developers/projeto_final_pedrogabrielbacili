@@ -1,6 +1,6 @@
 import { StyledHeader, StyledTextDegrade } from "../HeaderHome/style"
-import { StyledMenuHambuguer, StyledNameUser } from "./style"
-import {AiOutlineMenu } from "react-icons/ai"
+import {  StyledNameUser } from "./style"
+
 
 export const HeaderLage=()=>{
     return (
@@ -12,9 +12,6 @@ export const HeaderLage=()=>{
                 <img  src="../png/rickandmorty.png" alt="" />
                 <span>Samuel Leao</span>
             </StyledNameUser>
-            <StyledMenuHambuguer>
-                <AiOutlineMenu/>
-            </StyledMenuHambuguer>
         </StyledHeader>
     )
 }
