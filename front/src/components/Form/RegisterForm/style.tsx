@@ -23,6 +23,9 @@ export const StyleRegister =styled.div`
         .buttonFinalizar{
             width:76%;
         }
+        p{
+            font-size:14px;
+        }
         .buttonsTipoConta{
             width:76%;
             display: flex;

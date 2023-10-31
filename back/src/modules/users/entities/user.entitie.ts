@@ -21,5 +21,5 @@ export class User {
         this.id = randomUUID();
         
     }
-    address?:Address[];
+    addresses?:Address[];
 }

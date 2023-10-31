@@ -5,7 +5,7 @@ import { StyleCartComentario } from "./style"
 export const ListComentario=()=>{
     return (
         <StyleCartComentario>
-            <StyledTitle $fontSize="two" fontColor="gray">Comentários</StyledTitle>
+            <StyledTitle $fontSize="two" $fontColor="gray">Comentários</StyledTitle>
             <CartComentario/>
         </StyleCartComentario>
     )

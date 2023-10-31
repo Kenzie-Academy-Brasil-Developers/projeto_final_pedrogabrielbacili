@@ -22,12 +22,12 @@ const LoginForm=()=>{
     return (
         <StyledContainerForm>
         <form onSubmit={handleSubmit(signIn)}>
-            <StyledTitle $fontSize="one" fontColor="black">Login</StyledTitle>
+            <StyledTitle $fontSize="one" $fontColor="black">Login</StyledTitle>
             <Input id="email" label="email" placeholder="Digitar email" {...register("email")}/>
             <Input id="password" label="senha" placeholder="Digitar senha" {...register("password")}/>
-            <StyledTitle className="StyleesqueciMinhaSenha" $fontSize="three" fontColor="gray600">Esqueci minha senha</StyledTitle>
+            <StyledTitle className="StyleesqueciMinhaSenha" $fontSize="three" $fontColor="gray600">Esqueci minha senha</StyledTitle>
             <StyledButtonCSS $buttonSize="big" $buttonStyle="buttonBigBlue" type="submit">Entrar</StyledButtonCSS>
-            <StyledTitle  $fontSize="three" fontColor="gray600">ainda não possui cadastro?</StyledTitle>
+            <StyledTitle  $fontSize="three" $fontColor="gray600">ainda não possui cadastro?</StyledTitle>
             <StyledButtonCSS onClick={redirectCadastro} $buttonSize="big" $buttonStyle="buttonOutline2">cadastrar</StyledButtonCSS>
         </form>
         </StyledContainerForm>

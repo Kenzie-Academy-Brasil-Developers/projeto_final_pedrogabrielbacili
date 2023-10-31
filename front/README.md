@@ -1,27 +1,27 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>
+  <a  href= target="_blank">Projeto Full-Stack Motors Shop<p>
+</a></h1>
 
-Currently, two official plugins are available:
+<h3  align="center"><i>Este projeto é conhecido como Motors Shop e é uma plataforma de comércio eletrônico voltada para a negociação de veículos.</i></h4>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h3  align="center"><i>Nesta documentação, você terá acesso às informações e referências relacionadas à parte front-end deste projeto.</i></h4>
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas:
+ - [Typescript]
+ - [Axios]
+ - [React]
+ - [Styled-Componentes]
+ - [Zod]
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Iniciando o Projeto - Executando a API:
+*instalacao das dependências:*
+```bash
+$ npm install
+```
+*logo, utilize o comando para rodar o servidor:*
+```bash
+$ npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+*projeto apresentado pela Kezie Academy Brasil, e foi desenvolvida pelo aluno:*  [*Pedro Gabrie*](https://github.com/pedrogabrielbacili)

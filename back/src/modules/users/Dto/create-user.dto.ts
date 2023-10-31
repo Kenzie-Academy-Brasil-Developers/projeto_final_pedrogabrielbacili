@@ -4,6 +4,7 @@ import { hashSync } from 'bcryptjs';
 import { TipoConta } from '@prisma/client';
 import { ApiProperty } from '@nestjs/swagger';
 import { CreateAddressDto } from 'src/modules/address/dto/create-address.dto';
+import { Address } from 'src/modules/address/entities/address.entity';
 
 export class CreateUserDto {
   @ApiProperty({
@@ -50,44 +51,32 @@ export class CreateUserDto {
         groups: ['transform'],
     })
     password: string;
+
 }
 
 export class CreateUserInAddressDto{
-  @ApiProperty({
-    description: "Nome Do Usuario",
-    type: String,
-    default: "Pedro Gabriel",
-  })
   @IsString()
   nome: string;
 
-  @ApiProperty()
   @IsEmail()
   email: string;
 
-  @ApiProperty()
   @IsString()
   cpf: string;
 
-  @ApiProperty()
   @IsString()
   celular: string;
 
-  @ApiProperty()
   @IsString()
   data_nascimento: string;
 
-  @ApiProperty()
   @IsNotEmpty()
   descricao: string;
 
-  @ApiProperty()
   @IsEnum(TipoConta)
   conta: TipoConta;
 
-  @ApiProperty()
   @IsString()
-  @ApiProperty()
   @IsNotEmpty()
   @MinLength(8)
   @Transform(({ value }: { value: string }) => hashSync(value, 10), {

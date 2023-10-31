@@ -1,17 +1,17 @@
 import { z} from "zod";
 
 export const schemaRegister=z.object({
-    nome:z.string().nonempty("Nome obrigatório!"),
+    nome:z.string().min(1, "Nome obrigatório!"),
     email:z.string().email("Dese ser um email valido!"),
-    cpf:z.string().nonempty("CPF obrigatório!").min(11, "O CPF deve ter 11 caracter!"),
-    celular:z.string().nonempty("o celular é obrigatório!"),
-    data_de_nascimento:z.string().nonempty("data de nascimento obrigatório!"),
+    cpf:z.string().min(1,"CPF obrigatório!").min(11, "O CPF deve ter 11 caracter!"),
+    celular:z.string().min(1,"o celular é obrigatório!"),
+    data_de_nascimento:z.string().min(1,"data de nascimento obrigatório!"),
     descricao:z.string().optional(),
-    cep:z.string().nonempty("cep Obrigatório"),
-    estado:z.string().nonempty("estado obrigatório!"),
-    cidade:z.string().nonempty("cidade obrigatório!"),
-    rua:z.string().nonempty("rua obrigatório"),
-    numero:z.number().positive(),
+    cep:z.string().min(1,"cep Obrigatório"),
+    estado:z.string().min(1,"estado obrigatório!"),
+    cidade:z.string().min(1,"cidade obrigatório!"),
+    rua:z.string().min(1,"rua obrigatório"),
+    numero:z.string(),
     complemento:z.string().optional(),
     tipo_de_conta:z.enum(["anunciante", "comprador"]),
     senha:z.string().min(8, "a senha prescisar conter pelo menos 8 caracteres")

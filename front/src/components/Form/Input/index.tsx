@@ -17,7 +17,7 @@ const Input = forwardRef(
                     <input type="text" id={id} ref={ref} {...rest}/>
                     {label ? <label htmlFor={id}>{label}</label> : null}
                 </StyledInputContainer>
-                <StyledTitle $fontSize="one" fontColor="red">
+                <StyledTitle $fontSize="one" $fontColor="red">
                     {error ? <p>{error.message}</p>: null}
                 </StyledTitle>
             </div>

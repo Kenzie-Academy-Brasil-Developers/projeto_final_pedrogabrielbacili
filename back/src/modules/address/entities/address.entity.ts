@@ -8,6 +8,7 @@ export class Address {
     rua: string;
     numero: number;
     complemento?: string;
+    user_id:string;
     constructor() {
         this.id = randomUUID()
     }

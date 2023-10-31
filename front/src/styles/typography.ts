@@ -3,7 +3,7 @@ import styled, {css} from "styled-components";
 interface IStyledTitleProps {
     $fontSize: 'one' | 'two' | 'three' | 'four';
     textAlign?: 'center' | 'left' | 'right';
-    fontColor?:'white' | 'gray' | 'gray600' | 'gray550' | 'red' | "black";
+    $fontColor?:'white' | 'gray' | 'gray600' | 'gray550' | 'red' | "black";
   }
 
 export const StyledTitle = styled.div<IStyledTitleProps>`
@@ -36,8 +36,8 @@ export const StyledTitle = styled.div<IStyledTitleProps>`
         }
 
     }}
-    ${({ fontColor, theme }) => {
-        switch (fontColor) {
+    ${({ $fontColor, theme }) => {
+        switch ($fontColor) {
           case 'white':
             return css`
               color: ${theme.colors.white};

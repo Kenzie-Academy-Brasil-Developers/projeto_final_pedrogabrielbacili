@@ -6,6 +6,7 @@ import { PrismaService } from 'src/modules/database/prisma.service';
 import { plainToInstance } from 'class-transformer';
 import { Injectable } from '@nestjs/common';
 import { Address } from 'src/modules/address/entities/address.entity';
+import { CreateAddressDto } from 'src/modules/address/dto/create-address.dto';
 
 @Injectable()
 export class UsersPrismaRepository implements UsersRepository {
@@ -15,7 +16,6 @@ export class UsersPrismaRepository implements UsersRepository {
     Object.assign(user, {
       ...data,
     });
-    
     const newUser = await this.prisma.users.create({
       data: { ...user,  },
     });
