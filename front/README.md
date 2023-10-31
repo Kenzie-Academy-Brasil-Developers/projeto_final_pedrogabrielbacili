@@ -1,6 +1,6 @@
 
 <h1>
-  <a  href= target="_blank">Projeto Full-Stack Motors Shop<p>
+  <a  href="https://github.com/Kenzie-Academy-Brasil-Developers/projeto_final_pedrogabrielbacili" target="_blank">Projeto Full-Stack Motors Shop<p>
 </a></h1>
 
 <h3  align="center"><i>Este projeto é conhecido como Motors Shop e é uma plataforma de comércio eletrônico voltada para a negociação de veículos.</i></h4>
